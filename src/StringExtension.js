@@ -32,6 +32,10 @@ String.prototype.toCurrency = function () {
    return parseFloat(this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
 };
 
+String.prototype.fromCurrency = function () {
+  return validData(this) ? parseFloat(this.replace(/(,)/g, '')) : false;
+};
+
 function lowerCase(word) {
   return String.fromCharCode(word.charCodeAt() + 32);
 }
