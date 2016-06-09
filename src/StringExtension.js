@@ -19,6 +19,11 @@ String.prototype.isQuestion = function () {
   return validData(this) ? /([?])/.test(this) : false;
 };
 
+String.prototype.words = function () {
+  return validData(this) ? this.split(/\W+/g)
+    .filter(function(word) {return word !=='';}) : [];
+};
+
 function lowerCase(word) {
   return String.fromCharCode(word.charCodeAt() + 32);
 }
