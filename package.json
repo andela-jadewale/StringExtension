@@ -1,0 +1,11 @@
+{
+    "name": "StringExtension",
+    "description":"String class in Javascript extended using Prototype Oriented Programming",
+    "version": "1.0.0",
+    "keywords": [ "String","prototype", "extend","objects"],
+    "author": "Jolaade",
+    "scripts":{"start": "node main.js"},
+    "email":"jolaade.adewale@andela.com",
+    "contributors": ["jolaade"],
+    "dependencies": {"express":"latest"}
+}
