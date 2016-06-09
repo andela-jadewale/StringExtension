@@ -15,12 +15,20 @@ String.prototype.ucFirst = function () {
   return validData(this) ? this.toUpper()[0].concat(trim(this).toLower()) : '';
 };
 
+String.prototype.isQuestion = function () {
+  return validData(this) ? /([?])/.test(this) : false;
+};
+
 function lowerCase(word) {
   return String.fromCharCode(word.charCodeAt() + 32);
 }
 
 function upperCase(word) {
   return String.fromCharCode(word.charCodeAt() - 32);
+}
+
+function trim(words){
+  return words.substring(1);
 }
 
 function validData(word){
