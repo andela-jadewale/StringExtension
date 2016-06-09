@@ -24,6 +24,10 @@ String.prototype.words = function () {
     .filter(function(word) {return word !=='';}) : [];
 };
 
+String.prototype.wordCount = function () {
+  return validData(this) ? this.words().length : 0;
+};
+
 function lowerCase(word) {
   return String.fromCharCode(word.charCodeAt() + 32);
 }
