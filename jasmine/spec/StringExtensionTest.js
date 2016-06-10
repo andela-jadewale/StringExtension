@@ -1,3 +1,4 @@
+'use strict';
 describe('Vowel', function () {
   it('Returns true if vowels are present', function () {
     expect('Jolaade'.hasVowels()).toBeTruthy();
@@ -26,7 +27,6 @@ describe('Uppercase', function () {
     expect('Abraham'.toUpper()).toBe('ABRAHAM');
     expect('abraham'.toUpper()).toBe('ABRAHAM');
     expect('aBrAhAm'.toUpper()).toBe('ABRAHAM');
-    expect('MASTER of Javascript'.toUpper()).toBe('MASTER OF JAVASCRIPT');
   });
 });
 
@@ -60,8 +60,10 @@ describe('IsQuestion', function () {
 
 describe('words', function () {
   it('Returns words as an array', function () {
-    expect('jolaade , > is a @ & boy'.words()).toEqual(['jolaade','is','a','boy']);
-    expect('What is it, let , us chill'.words()).toEqual(['What','is','it','let','us','chill']);
+    expect('jolaade , > is a @ & boy'.words())
+      .toEqual(['jolaade', 'is', 'a', 'boy']);
+    expect('What is it, let , us chill'.words())
+      .toEqual(['What', 'is', 'it', 'let', 'us', 'chill']);
     expect('All these songs for you'.words())
       .toEqual(['All', 'these', 'songs', 'for', 'you']);
     expect('Are you alright?'.words()).toEqual(['Are', 'you', 'alright']);
