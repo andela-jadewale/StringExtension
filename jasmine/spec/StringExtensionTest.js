@@ -86,7 +86,6 @@ describe('toCurrency', function () {
   it('Returns a currency representation of the String', function () {
     expect('11111.11'.toCurrency()).toEqual(11,111.11);
     expect('23456734567'.toCurrency()).toEqual(23,456,734,567);
-    expect('11111.11'.toCurrency()).toBe(11,111.11);
     expect('100'.toCurrency()).toBe(100);
     expect('1000'.toCurrency()).toBe(parseFloat('1,000'));
     expect('1000000000'.toCurrency()).toBe(parseFloat('1,000,000,000'));
