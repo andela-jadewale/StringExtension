@@ -51,8 +51,8 @@ describe('UcFirst', function () {
 
 describe('IsQuestion', function () {
   it('Returns true if a sentence is a question', function () {
-    expect('jolaade is a boy ? right ?'.isQuestion()).toBeTruthy();
-    expect('What is the meaning ? '.isQuestion()).toBeTruthy();
+    expect('are you okay ? '.isQuestion()).toBeTruthy();
+    expect('What is the meaning ?'.isQuestion()).toBeTruthy();
     expect('This is not it !'.isQuestion()).toBeFalsy();
     expect('Are we good '.isQuestion()).toBe(false);
   });

@@ -28,7 +28,7 @@ String.prototype.toLower = function () {
 
 /**
  * Make a word's first character uppercase
- * @return {String} [Returns a string with the first character
+ * @return {String} Returns a string with the first character
  * capitalized
  */
 String.prototype.ucFirst = function () {
