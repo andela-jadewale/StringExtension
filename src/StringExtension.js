@@ -36,12 +36,12 @@ String.prototype.ucFirst = function () {
 };
 
 /**
- * Check if a String ends with a question mark
+ * trims all the spaces and checks if word ends with question mark
  * @return {Boolean} Return true if a string has
  * question mark or false otherwise
  */
 String.prototype.isQuestion = function () {
-  return validData(this) ? /([?])/.test(this) : false;
+  return validData(this) ? /([\w+\s]+[?]$)/.test(this.trim()) : false;
 };
 
 /**
@@ -73,11 +73,12 @@ String.prototype.toCurrency = function () {
 };
 
 /**
- * Converts a money format to numbers by replacing all , with empty spaces
+ * Converts to numbers by replacing all ,£$¤€¢¥₧ƒ, with empty spaces
  * @return {Float} The number format
  */
 String.prototype.fromCurrency = function () {
-  return validData(this) ? parseFloat(this.replace(/(,)/g, '')) : false;
+  return validData(this) ? parseFloat(this.replace(/([£$¤€¢¥₧ƒ,])/g, '')) :
+   false;
 };
 
 /**

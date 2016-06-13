@@ -22,8 +22,6 @@ describe('Vowel', function () {
 describe('Uppercase', function () {
   it('Converts lowercase alphabets to uppercase', function () {
     expect('jolaade'.toUpper()).toEqual('JOLAADE');
-    expect('why'.toUpper()).toEqual('WHY');
-    expect('tunde'.toUpper()).toEqual('TUNDE');
     expect('Abraham'.toUpper()).toBe('ABRAHAM');
     expect('abraham'.toUpper()).toBe('ABRAHAM');
     expect('aBrAhAm'.toUpper()).toBe('ABRAHAM');
@@ -33,8 +31,6 @@ describe('Uppercase', function () {
 describe('Lower', function () {
   it('Converts uppercase alphabets to lowercase', function () {
     expect('JOLAADE'.toLower()).toEqual('jolaade');
-    expect('WHY'.toLower()).toEqual('why');
-    expect('TUNDE'.toLower()).toEqual('tunde');
     expect('somebody'.toLower()).toBe('somebody');
     expect('LOver of Java'.toLower()).toBe('lover of java');
   });
@@ -43,7 +39,6 @@ describe('Lower', function () {
 describe('UcFirst', function () {
   it('Converts first alphabet to uppercase', function () {
     expect('jolaade'.ucFirst()).toEqual('Jolaade');
-    expect('why'.ucFirst()).toEqual('Why');
     expect('tuNde'.ucFirst()).toEqual('Tunde');
     expect(''.ucFirst()).toEqual('');
   });
@@ -52,8 +47,9 @@ describe('UcFirst', function () {
 describe('IsQuestion', function () {
   it('Returns true if a sentence is a question', function () {
     expect('are you okay ? '.isQuestion()).toBeTruthy();
-    expect('What is the meaning ?'.isQuestion()).toBeTruthy();
-    expect('This is not it !'.isQuestion()).toBeFalsy();
+    expect('What is the meaning?'.isQuestion()).toBeTruthy();
+    expect('This is not ? it !'.isQuestion()).toBeFalsy();
+    expect('?'.isQuestion()).toBe(false);
     expect('Are we good '.isQuestion()).toBe(false);
   });
 });
@@ -69,8 +65,6 @@ describe('words', function () {
     expect('Are you alright?'.words()).toEqual(['Are', 'you', 'alright']);
     expect('Are you ?-*()!>%^@"\'= alright?'.words())
       .toEqual(['Are', 'you', 'alright']);
-    expect('I am not your mate'.words())
-      .toEqual(['I', 'am', 'not', 'your', 'mate']);
     expect('I will never give up on you'.words())
       .toEqual(['I', 'will', 'never', 'give', 'up', 'on', 'you']);
     expect(''.words()).toEqual([]);
@@ -81,10 +75,9 @@ describe('wordCount', function () {
   it('Returns the number of words in the String', function () {
     expect('jolaade is a boy'.wordCount()).toEqual(4);
     expect('What is the meaning * lol'.wordCount()).toEqual(5);
-    expect('This is not it ! here'.wordCount()).toEqual(5);
-    expect('All these songs for you'.wordCount()).toBe(5);
+    expect('All the_se songs for you'.wordCount()).toBe(5);
     expect('Are you alright?'.wordCount()).toBe(3);
-    expect('I am not your mate'.wordCount()).toBe(5);
+    expect('I am not   your mate'.wordCount()).toBe(5);
     expect(''.wordCount()).toBe(0);
   });
 });
@@ -106,13 +99,13 @@ describe('toCurrency', function () {
 
 describe('fromCurrency', function () {
   it('Returns a String representation of a currency', function () {
-    expect('11,111.11'.fromCurrency()).toEqual(11111.11);
-    expect('23,456,734,567'.fromCurrency()).toEqual(23456734567);
-    expect('11,111.11'.fromCurrency()).toBe(11111.11);
+    expect('£11,111.11'.fromCurrency()).toEqual(11111.11);
+    expect('$23,456,734,567'.fromCurrency()).toEqual(23456734567);
+    expect('¤11,111.11'.fromCurrency()).toBe(11111.11);
+    expect('€100'.fromCurrency()).toBe(100);
     expect('100'.fromCurrency()).toBe(100);
-    expect('100'.fromCurrency()).toBe(100);
-    expect('1,000'.fromCurrency()).toBe(1000);
-    expect('1,000,000,000'.fromCurrency()).toBe(1000000000);
+    expect('1,000¥'.fromCurrency()).toBe(1000);
+    expect('1,000,00₧0,000'.fromCurrency()).toBe(1000000000);
   });
 });
 
