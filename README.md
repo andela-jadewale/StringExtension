@@ -1,5 +1,6 @@
 ## String Extension
 
+[![Build Status](https://travis-ci.org/jadewale/StringExtension.svg?branch=master)](https://travis-ci.org/jadewale/StringExtension)
 
 String class in Javascript extended using Prototype Oriented Programming
 
