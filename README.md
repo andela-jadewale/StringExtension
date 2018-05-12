@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/jadewale/StringExtension.svg?branch=master)](https://travis-ci.org/jadewale/StringExtension)
 
+[![Contact me on Codementor](https://cdn.codementor.io/badges/contact_me_github.svg)](https://www.codementor.io/jolaadeadewale765?utm_source=github&utm_medium=button&utm_term=jolaadeadewale765&utm_campaign=github)
+
 String class in Javascript extended using Prototype Oriented Programming
 
 ## Installation
