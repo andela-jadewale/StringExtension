@@ -118,3 +118,5 @@ function validData(word) {
     return true;
   }
 }
+
+module.exports = String;

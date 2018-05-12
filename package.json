@@ -10,7 +10,8 @@
   ],
   "author": "Jolaade",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "test": "cd jasmine && jasmine spec/StringExtensionTest.js"
   },
   "email": "jolaade.adewale@andela.com",
   "contributors": [
@@ -19,5 +20,8 @@
   "dependencies": {
     "express": "latest",
     "open": "0.0.5"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }

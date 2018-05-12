@@ -1,3 +1,5 @@
+require('../../src/StringExtension');
+
 'use strict';
 describe('Vowel', function () {
   it('Returns true if vowels are present', function () {
